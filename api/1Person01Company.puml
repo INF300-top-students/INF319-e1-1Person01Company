@@ -1,0 +1,32 @@
+@startuml
+class Company {
+- String name
+- int numberOfEmployees
++ <<Create>> Company()
++ <<Create>> Company(String)
++ String getName()
++ void setName(String)
++ int getNumberOfEmployees()
++ void setNumberOfEmployees(int)
++ void incrementNumberOfEmployees()
++ void decrementNumberOfEmployees()
+}
+class Person {
+- String name
+- String surname
+- double salary
++ <<Create>> Person()
++ <<Create>> Person(String,String)
++ <<Create>> Person(String,String,double,Company)
++ String getName()
++ void setName(String)
++ String getSurname()
++ void setSurname(String)
++ double getSalary()
++ Company getCompany()
++ void selfHire(Company,double)
++ void selfDismiss()
+}
+
+Person --> "0..1" Company
+@enduml
